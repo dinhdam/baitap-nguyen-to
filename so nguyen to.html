@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let listPrime = [];
+    function isPrime(num){
+        let status=true;
+        if(num<=1){
+            alert("Số không được nhỏ hơn 2");
+            status = false;
+        }
+        else{
+            for(let i=2;i<num;i++){
+                if(num % i == 0){
+                    status=false;
+                    break;
+                }
+            }
+        }
+        return status;
+    }
+    function checkNum(n){
+        let count = 0; current = 2;
+        while(count < n){
+            if(isPrime(current)){
+                listPrime.push(current);
+                count++;
+            }
+            current++;
+        }
+        alert(listPrime);
+    }
+    checkNum(20);
+</script>
+</body>
+</html>
